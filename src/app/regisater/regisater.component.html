@@ -1,0 +1,97 @@
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<body>
+  <div class="container">
+    <div class="row px-3">
+      <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
+        <div class="img-left d-none d-md-flex"></div>
+
+        <div class="card-body">
+          <h4 class="title text-center mt-4">
+         Create an account
+          </h4>
+          <form class="form-box px-3"  #registerform="ngForm" (ngSubmit)="registerUser()">
+            <small class="text-danger">{{msg}}</small>
+
+            <div class="form-input">
+              <span><i class="fa fa-user-o"></i></span>
+              <input type="text" name="username" [(ngModel)] ="user.userName" #username="ngModel" placeholder="User FullName" tabindex="10" 
+              [class.is-invalid]="username.invalid && username.touched" required>
+              <small class="text-danger" [class.d-none]="username.valid || username.untouched">
+                User name is required field
+               </small>
+            </div>
+            <div class="form-input">
+              <span><i class="fa fa-envelope-o"></i></span>
+              <input type="email" name="email" [(ngModel)] ="user.emailId" #email="ngModel" placeholder="Email Address" tabindex="10" 
+              [class.is-invalid]="email.invalid && email.touched" required>
+              <small class="text-danger" [class.d-none]="email.valid || email.untouched">
+                Email is required field
+               </small>
+            </div>
+            <div class="form-input">
+              <span><i class="fa fa-key"></i></span>
+              <input type="password" name="password" [(ngModel)]="user.password" #password="ngModel"  placeholder="Password"
+              [class.is-invalid]="password.invalid && password.touched" required>
+              <small class="text-danger" [class.d-none]="password.valid || password.untouched">
+                Password is required field
+               </small>
+            </div>
+
+            <div class="mb-3">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="cb1" name="">
+                <label class="custom-control-label" for="cb1">I agree all terms & conditions</label>
+              </div>
+            </div>
+
+            <div class="mb-3">
+           
+              <button  type="submit" class="btn btn-block text-uppercase">
+                Register
+              </button>
+            </div>
+
+
+            <div class="text-center mb-3">
+              or login with
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-4">
+                <a href="#" class="btn btn-block btn-social btn-facebook">
+                  facebook
+                </a>
+              </div>
+
+              <div class="col-4">
+                <a href="#" class="btn btn-block btn-social btn-google">
+                  google
+                </a>
+              </div>
+
+              <div class="col-4">
+                <a href="#" class="btn btn-block btn-social btn-twitter">
+                  twitter
+                </a>
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="text-center mb-2">
+              Already have an account
+              <a href="/login" class="register-link">
+               Login here
+              </a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
